@@ -67,4 +67,9 @@ endJrnFil --> remStu(Remove student)
 
 endClass --> endClassFil[deleteClass.js]
 remStu --> remStuFil[removeStudents.js]
+
+%% Update application working
+
+updFil --> pullChange(git pull)
+pullChange --> instPckg(npm i)
 ```
