@@ -75,3 +75,7 @@
 ---
 
 - Kindly refer [this page](https://github.com/Sam-Varghese/TeachersKit/blob/main/CODE_OF_CONDUCT.md)
+
+---
+
+![Thankyou image](https://cdn.pixabay.com/photo/2021/08/07/21/17/thank-you-6529418_960_720.png)
