@@ -41,5 +41,20 @@ offAtt --> offAttFile[offlineAttendance.js]
 onlAttFil --> strAtt[storeAttendance.js]
 offAttFile --> strAtt
 
+%% Working on showRecords menu items
 
+shRecFil --> stuRec(Student records)
+shRecFil --> classRec(Class records)
+
+%% Working on student records
+
+stuRec --> allRec(All records)
+stuRec --> monthlyRec(Monthly records)
+stuRec --> dailyRec(Daily record)
+
+%% Working on student records menu item files
+
+allRec --> recordsProg[fetchAttendanceRecords.js]
+monthlyRec --> recordsProg
+dailyRec --> recordsProg
 ```
