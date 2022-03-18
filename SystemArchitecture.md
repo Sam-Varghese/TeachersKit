@@ -57,4 +57,14 @@ stuRec --> dailyRec(Daily record)
 allRec --> recordsProg[fetchAttendanceRecords.js]
 monthlyRec --> recordsProg
 dailyRec --> recordsProg
+
+%% Working on endJourney menu items
+
+endJrnFil --> endClass(End class)
+endJrnFil --> remStu(Remove student)
+
+%% Working on file for endJourney menu items
+
+endClass --> endClassFil[deleteClass.js]
+remStu --> remStuFil[removeStudents.js]
 ```
