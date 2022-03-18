@@ -28,7 +28,8 @@
 
 ---
 
-- This application is made in [Node js](https://nodejs.org/en/)
+- This application is made in [Node js](https://nodejs.org/en/).
+- It uses [Mongodb](https://www.mongodb.com/) database.
 - To know more, kindly check [this out](https://github.com/Sam-Varghese/TeachersKit/blob/main/SystemArchitecture.md)
 
 ---
