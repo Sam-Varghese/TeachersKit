@@ -58,3 +58,9 @@
 ---
 
 - This software is licensed under [MIT license](https://github.com/Sam-Varghese/TeachersKit/blob/main/LICENSE)
+
+---
+
+## Contributing
+
+- Kindly refer [this page](https://github.com/Sam-Varghese/TeachersKit/blob/main/CONTRIBUTING.md)
