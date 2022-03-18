@@ -82,7 +82,7 @@ async function TakeOnlineAttendance() {
             }
         }
         // Now add the list of presentees to the database
-        StoreAttendance(namesList, classSelected);
+        StoreAttendance(namesList, classSelected, `Online`);
     }
 }
 module.exports = TakeOnlineAttendance;

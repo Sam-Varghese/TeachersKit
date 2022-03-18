@@ -24,7 +24,7 @@ async function TakeOfflineAttendance(className) {
         `Select the list of attendees: `,
         studentsList
     );
-    StoreAttendance(presenteesList, className);
+    StoreAttendance(presenteesList, className, `Offline`);
 }
 
 module.exports = TakeOfflineAttendance;

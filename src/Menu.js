@@ -4,6 +4,7 @@ var NewBeginnings = require("./newBeginnings");
 var TakeAttendance = require("./takeAttendance");
 var ShowAttendanceRecords = require("./showRecords");
 var EndJourney = require("./endJourney");
+var UpdateSoftware = require("./updateApplication");
 async function Menu() {
     // Showing user the checkbox
     var taskSelected = await input.checkboxes(`Select the task: `, [
@@ -27,6 +28,9 @@ async function Menu() {
             break;
         case "End journey":
             EndJourney();
+            break;
+        case `Update application`:
+            UpdateSoftware();
             break;
         default:
             console.log(chalk.red(`Incorrect option...`));

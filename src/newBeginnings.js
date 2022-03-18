@@ -11,6 +11,7 @@ async function NewBeginnings() {
     switch (startNew[0]) {
         case `Start new class`:
             StartNewClass();
+            break;
         case `Add new student`:
             let classNamesList = await GetClassNames();
             // Making the user select the class
@@ -32,6 +33,7 @@ async function NewBeginnings() {
             // Getting the name of new student
             let newStudentName = await input.text(`Name of new student: `);
             AddStudent(classSelected, newStudentName);
+            break;
     }
 }
 module.exports = NewBeginnings;

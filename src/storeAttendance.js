@@ -3,8 +3,8 @@ var MongoClient = require("mongodb").MongoClient;
 var chalk = require("chalk");
 var url = "mongodb://localhost:27017/";
 
-//$ Function to store the presentees list of al class into the database
-function StoreAttendance(presenteesList, className) {
+//$ Function to store the presentees list of a class into the database
+function StoreAttendance(presenteesList, className, attendanceMode) {
     MongoClient.connect(url, (err, db) => {
         if (err) throw err;
         var dbo = db.db("PaulClasses");
@@ -13,7 +13,8 @@ function StoreAttendance(presenteesList, className) {
             month: new Date().getMonth(),
             date: new Date().getDate(),
             stringDate: new Date().toString(),
-            presentees: presenteesList
+            presentees: presenteesList,
+            mode: attendanceMode
         };
         dbo.collection(`${className}Attendance`).insertOne(JSONdata, (error, res) => {
             if (error) throw error;

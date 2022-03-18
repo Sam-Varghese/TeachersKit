@@ -64,6 +64,26 @@ async function StartNewClass() {
                 );
             });
         }
+    } else {
+        // Inserting the data to mong-db database
+        mongoClient.connect(connectionUrl, (err, db) => {
+            if (err) throw err;
+            var dbo = db.db(databaseName);
+            var databaseInformation = {
+                className: className,
+                classDescription: classDescription,
+                dateOfCreation: new Date().toGMTString(),
+                studentsList: [],
+            };
+            dbo.collection("classInformation").insertOne(
+                databaseInformation,
+                (error, result) => {
+                    if (error) throw error;
+                    log(chalk.green(`Saved info. of ${className}`));
+                    db.close();
+                }
+            );
+        });
     }
 }
 
