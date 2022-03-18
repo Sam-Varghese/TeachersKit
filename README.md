@@ -63,4 +63,14 @@
 
 ## Contributing
 
+---
+
 - Kindly refer [this page](https://github.com/Sam-Varghese/TeachersKit/blob/main/CONTRIBUTING.md)
+
+---
+
+## Code of conduct
+
+---
+
+- Kindly refer [this page](https://github.com/Sam-Varghese/TeachersKit/blob/main/CODE_OF_CONDUCT.md)
