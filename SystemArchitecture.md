@@ -2,7 +2,7 @@
 
 ---
 
-- The below flowchart shows how the files are interconnected, and how how the software works under the hood.
+- The below flowchart shows how the [files](https://github.com/Sam-Varghese/TeachersKit/tree/main/src) are interconnected, and how how the software works under the hood.
 
 ---
 
