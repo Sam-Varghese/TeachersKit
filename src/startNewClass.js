@@ -1,6 +1,7 @@
 var input = require("input");
 var fs = require("fs");
 var chalk = require("chalk");
+var _ = require("lodash");
 
 var log = console.log;
 
@@ -16,11 +17,11 @@ var databaseName = `PaulClasses`;
 //$ Function to create a new class, and store names of students in that class
 async function StartNewClass() {
     // Taking input of class information
-    const className = await input.text("Name of class: ");
+    const className = _.trim(_.capitalize(await input.text("Name of class: ")));
     // Setting the database name to class name
-    const classDescription = await input.text(
+    const classDescription = _.trim(_.capitalize(await input.text(
         `Description of the ${className}: `
-    );
+    )));
     const wannaInputStudentsList = await input.confirm(
         `Wanna give the list of students in ${className}: `
     );

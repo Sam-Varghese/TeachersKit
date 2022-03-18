@@ -14,6 +14,7 @@ function GetStudentNames(className) {
                 .toArray((err, data) => {
                     if (err) throw err;
                     db.close();
+                    // Below syntax is to get only the names of unique students
                     resolve([...new Set(data[0].studentsList)]);
                 });
         });

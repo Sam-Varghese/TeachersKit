@@ -33,6 +33,14 @@
 
 ---
 
+## Requirements
+
+---
+
+- [Node js](https://nodejs.org/en/)
+
+---
+
 ## Setup
 
 ---

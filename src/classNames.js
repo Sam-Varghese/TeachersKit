@@ -1,5 +1,6 @@
 var input = require("input");
 var chalk = require("chalk");
+var _ = require("lodash");
 
 // Connecting to mongo-db database
 var MongoClient = require("mongodb").MongoClient;
@@ -25,7 +26,7 @@ function GetClassNames() {
                     if (err) throw err;
                     // Flattening the array
                     let finalData = data.map((item) => {
-                        return item.className;
+                        return _.trim(_.capitalize(item.className));
                      })
                     db.close();
                     resolve(finalData);
