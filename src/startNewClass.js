@@ -8,7 +8,9 @@ var log = console.log;
 var mongoClient = require("mongodb").MongoClient;
 var connectionUrl = "mongodb://localhost:27017/";
 
-var pathToStudentNamesTxtFile = `D:/VS Code Workspace/Rough Space/workingProjects/Attendance-Management/documents/studentNames.txt`;
+var pathToStudentNamesTxtFile = require("path").resolve(
+    "documents/studentNames.txt"
+);
 var databaseName = `PaulClasses`;
 
 //$ Function to create a new class, and store names of students in that class

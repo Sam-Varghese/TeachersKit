@@ -6,7 +6,9 @@ var AddNewStudents = require("./newStudent");
 var StoreAttendance = require("./storeAttendance");
 var fs = require("fs");
 
-var pathToStudentNamesTxtFile = `D:/VS Code Workspace/Rough Space/workingProjects/Attendance-Management/documents/studentNames.txt`;
+var pathToStudentNamesTxtFile = require("path").resolve(
+    "documents/studentNames.txt"
+);
 
 //$ Function to take the attendance in the online mode
 async function TakeOnlineAttendance() {
