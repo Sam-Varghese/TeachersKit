@@ -1,7 +1,7 @@
 {
     "name": "teachers-kit",
     "version": "1.0.0",
-    "description": "A project to manage sunday school tasks",
+    "description": "A project to compile all necessary programs required by teachers on a daily basis.",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
