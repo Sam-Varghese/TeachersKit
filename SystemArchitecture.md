@@ -3,11 +3,18 @@ flowchart TB;
 
 %% Creating menu items
 
-menu(Menu) --> newBeg(New beginnings)
-menu --> takAtt(Take attendance)
-menu --> shRec(Show records)
-menu --> endJrn(End journey)
+menu(Menu) --> act(Activator)
+menu --> attendance(Attendance)
 menu --> upd(Update)
+menu --> report(Report issues)
+
+%% Attendance menu items
+
+attendance --> newBeg(New beginnings)
+attendance --> takAtt(Take attendance)
+attendance --> shRec(Show records)
+attendance --> endJrn(End journey)
+
 
 %% Putting up the file names for resp. menu items
 

@@ -56,6 +56,8 @@ async function StartNewClass() {
                     classDescription: classDescription,
                     dateOfCreation: new Date().toGMTString(),
                     studentsList: studentNames,
+                    activatorLinks: [],
+                    studentRecords: []
                 };
                 dbo.collection("classInformation").insertOne(
                     databaseInformation,
@@ -77,6 +79,8 @@ async function StartNewClass() {
                 classDescription: classDescription,
                 dateOfCreation: new Date().toGMTString(),
                 studentsList: [],
+                activatorLinks: [],
+                studentRecords: [],
             };
             dbo.collection("classInformation").insertOne(
                 databaseInformation,
