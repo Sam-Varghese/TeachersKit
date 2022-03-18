@@ -14,6 +14,7 @@ async function Menu() {
         "End journey",
         "Student records",
         "Update application",
+        "Report bugs/ request features"
     ]);
     // Functioning according to user input
     switch (taskSelected[0]) {
@@ -32,6 +33,8 @@ async function Menu() {
         case `Update application`:
             UpdateSoftware();
             break;
+        case `Report bugs/ request features`:
+            
         default:
             console.log(chalk.red(`Incorrect option...`));
             console.log(chalk.yellow(`Kindly select again...`));
