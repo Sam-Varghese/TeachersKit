@@ -30,3 +30,14 @@
 
 - This application is made in [Node js](https://nodejs.org/en/)
 - To know more, kindly check [this out](https://github.com/Sam-Varghese/TeachersKit/blob/main/SystemArchitecture.md)
+
+---
+
+## Setup
+
+---
+
+- In order to set this project on your machine, firstly [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repository.
+- Then [clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) this repository.
+- Now execute `npm i` command to install necessary packages required by the application.
+- Now execute [index.js](https://github.com/Sam-Varghese/TeachersKit/blob/main/index.js)
