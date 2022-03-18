@@ -50,3 +50,11 @@
 - Then [clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) this repository.
 - Now execute `npm i` command to install [necessary packages](https://github.com/Sam-Varghese/TeachersKit/network/dependencies) required by the application.
 - Now execute [index.js](https://github.com/Sam-Varghese/TeachersKit/blob/main/index.js)
+
+---
+
+## License
+
+---
+
+- This software is licensed under [MIT license](https://github.com/Sam-Varghese/TeachersKit/blob/main/LICENSE)
