@@ -1,3 +1,11 @@
+# Software Architecture
+
+---
+
+- The below flowchart shows how the files are interconnected, and how how the software works under the hood.
+
+---
+
 ```mermaid
 flowchart TB;
 
