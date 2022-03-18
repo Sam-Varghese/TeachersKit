@@ -8,6 +8,16 @@ menu --> attendance(Attendance)
 menu --> upd(Update)
 menu --> report(Report issues)
 
+%% Activator menu items
+
+act --> actCls(Activate Class)
+act --> actInit(Initialize)
+act --> actUpd(Update activator links)
+
+actCls --> actFil[activator.js]
+actInit --> actFil
+actUpd --> actFil
+
 %% Attendance menu items
 
 attendance --> newBeg(New beginnings)
