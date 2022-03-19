@@ -27,19 +27,35 @@ async function ShowAttendanceRecords() {
     }
     // Asking the types of records to fetch
     const recordType = await input.checkboxes(`Select the records to fetch: `, [
-        `Attendance of a student`,
-        `Attendance of classes`,
+        `Attendance records of a student`,
+        `Class attendance records`,
     ]);
     for (let i = 0; i < recordType.length; i++) {
         switch (recordType[i]) {
-            case "Attendance of a student":
+            case "Attendance records of a student":
                 // Asking the student name
                 const studentNames = await GetStudentNames(classesSelected[0]);
-                console.log(studentNames);
-                const studentsSelected = await input.checkboxes(
-                    `Select the students: `,
-                    studentNames
-                );
+                // If there are no students in the class
+                if (studentNames.length == 0) {
+                    console.log(
+                        chalk.red(`No student available for this class.`)
+                    );
+                    return null;
+                    // If there's one student in the class
+                } else if (studentNames.length == 1) {
+                    console.log(
+                        chalk.yellow(
+                            `Automatically selecting the only student of the class ${studentNames[0]}`
+                        )
+                    );
+                    const studentsSelected = studentNames;
+                    // If there are multiple students in the class
+                } else {
+                    const studentsSelected = await input.checkboxes(
+                        `Select the students: `,
+                        studentNames
+                    );
+                }
                 // Asking the time range of records and iterating through all the students selected
                 for (let j = 0; j < studentsSelected.length; j++) {
                     const typeStudentRecord = await input.checkboxes(
@@ -105,13 +121,29 @@ async function ShowAttendanceRecords() {
                     }
                 }
                 break;
-            case "Attendance of classes":
+            case "Class attendance records":
                 //! To be continued
-                console.log(
-                    chalk.yellow(
-                        `This feature is in progress. Kindly try to use it later.`
-                    )
-                );
+                console.log(chalk.yellow(`This feature will be available in the future. Currently it is in progress.`));
+                break;
+                let classNamesList = await GetClassNames();
+                if (classNamesList.length == 0) {
+                    console.log(
+                        chalk.red(`No class available in the database.`)
+                    );
+                } else if (classNamesList.length == 1) {
+                    console.log(
+                        chalk.yellow(
+                            `Automatically selecting the only class in the database, ie ${classNamesList[0]}`
+                        )
+                    );
+                    const classSelected = classNamesList[0];
+                } else {
+                    const classSelected = await input.checkboxes(
+                        `Select the class: `,
+                        GetClassNames
+                    );
+                }
+                
         }
     }
 }
