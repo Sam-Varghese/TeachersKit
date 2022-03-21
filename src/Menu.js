@@ -19,7 +19,7 @@ async function Menu() {
     ]);
     switch (taskGenre[0]) {
         case `Activator`:
-            Activator();
+            await Activator();
             break;
         case `Attendance`:
             // Showing user the checkbox
@@ -33,27 +33,27 @@ async function Menu() {
             // Functioning according to user input
             switch (taskSelected[0]) {
                 case "New beginnings":
-                    NewBeginnings();
+                    await NewBeginnings();
                     break;
                 case "Take attendance":
-                    TakeAttendance();
+                    await TakeAttendance();
                     break;
                 case "Show records":
-                    ShowAttendanceRecords();
+                    await ShowAttendanceRecords();
                     break;
                 case "End journey":
-                    EndJourney();
+                    await EndJourney();
                     break;
 
                 default:
                     console.log(chalk.red(`Incorrect option...`));
                     console.log(chalk.yellow(`Kindly select again...`));
-                    Menu();
+                    await Menu();
                     break;
             }
             break;
         case `Update application`:
-            UpdateSoftware();
+            await UpdateSoftware();
             break;
         case `Report bugs/ request features`:
             await open(
@@ -138,7 +138,7 @@ async function Menu() {
             break;
         default:
             console.log(chalk.red(`Incorrect option, kindly select again...`));
-            Menu();
+            await Menu();
             break;
     }
 }

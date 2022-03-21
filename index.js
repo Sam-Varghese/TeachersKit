@@ -19,6 +19,8 @@ var figletPromise = new Promise((resolve, reject) => {
 });
 
 // Printing out the menu options
-figletPromise.then((data) => {
-    Menu();
+figletPromise.then(async (data) => {
+    while (true) {
+        await Menu();
+    }
 });
