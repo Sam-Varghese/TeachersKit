@@ -15,7 +15,7 @@ function GetStudentNames(className) {
                     if (err) throw err;
                     db.close();
                     // Below syntax is to get only the names of unique students
-                    resolve([...new Set(data[0].studentsList)]);
+                    resolve([...new Set(data[0].studentsList.sort())]);
                 });
         });
     });

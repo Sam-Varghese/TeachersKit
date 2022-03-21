@@ -26,7 +26,7 @@ async function Activator() {
                 `Select the class: `,
                 classNamesList
             );
-            ActivateClass(classSelected[0]);
+            await ActivateClass(classSelected[0]).catch((rejectionMessage) => {chalk.red(`Unsuccessful activation: ${rejectionMessage}`)});
             break;
         // Adding/ deleting the links
         case `Update activator links`:

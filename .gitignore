@@ -2,3 +2,4 @@ node_modules/
 rough/
 tempCodeRunnerFile.js
 .vscode/
+*.xlsx

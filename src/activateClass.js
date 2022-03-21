@@ -6,7 +6,7 @@ var chalk = require("chalk");
 const { exec } = require("child_process");
 
 async function ActivateClass(className) {
-    // Extracting the links from mongodb
+    return new Promise((resolve, reject) =>{// Extracting the links from mongodb
     MongoClient.connect(url, (error, db) => {
         if (error) throw error;
         let dbo = db.db("PaulClasses");
@@ -46,7 +46,10 @@ async function ActivateClass(className) {
                                     console.log(
                                         chalk.red(`Failed to open ${url}`)
                                     );
-                                    throw error;
+                                    console.log(chalk.yellow(`Trying to open it on browser...`));
+                                    open(url);
+                                    reject(`Failed to open link`);
+                                    console.log(error);
                                 }
                             }
                         );
@@ -56,8 +59,9 @@ async function ActivateClass(className) {
                     }
                 });
                 db.close();
+                resolve(`Opened links`);
             }
         );
-    });
+    });})
 }
 module.exports = ActivateClass;

@@ -9,6 +9,7 @@ var Activator = require("./activator");
 var open = require("open");
 var GetClassInformation = require("./getClassInformation");
 var GetClassNames = require("./classNames");
+var GetClassInformationExcel = require("./classInformationExcel");
 async function Menu() {
     let taskGenre = await input.checkboxes(`Select the task: `, [
         `Activator`,
@@ -64,7 +65,7 @@ async function Menu() {
             // Getting the type of record user wants
             let recordType = await input.checkboxes(
                 `Select the type of record: `,
-                [`Class records`, `Student records`]
+                [`Class records`, `Excel: Class records`,`Student records`]
             );
             // Looping over all the types selected
             for (let i = 0; i < recordType.length; i++) {
@@ -73,7 +74,7 @@ async function Menu() {
                 switch (recordType[i]) {
                     case `Class records`:
                         // Making the user select the class
-                        let classNamesList = await GetClassNames();
+                        var classNamesList = await GetClassNames();
                         // Checking the length of the list of classes
                         if (classNamesList.length == 0) {
                             console.log(
@@ -121,6 +122,34 @@ async function Menu() {
                             console.log(link);
                         });
 
+                        break;
+                    case `Excel: Class records`:
+                        // Making the user select the class
+                        classNamesList = await GetClassNames();
+                        // Checking the length of the list of classes
+                        if (classNamesList.length == 0) {
+                            console.log(
+                                chalk.red(
+                                    `No class present in the database. Executing the batch job...`
+                                )
+                            );
+                            break;
+                        } else if (classNamesList.length == 1) {
+                            console.log(
+                                chalk.yellow(
+                                    `Selecting the only class present in the database, ie: ${classNamesList[0]} automatically.`
+                                )
+                            );
+                            var classSelected = classNamesList[0];
+                        } else {
+                            var classSelected = await input.checkboxes(
+                                `Select the class: `,
+                                classNamesList
+                            );
+                            classSelected = classSelected[0];
+                        }
+                        await GetClassInformationExcel(classSelected);
+                        open(`documents/${classSelected}Information.xlsx`);
                         break;
                     case `Student records`:
                         break;
