@@ -16,7 +16,7 @@ async function Activator() {
     switch (optionSelected[0]) {
         // Initializing activator to a class
         case `Initialize activator to a class`:
-            ActivateActivatorClass();
+             await ActivateActivatorClass();
             break;
         // Activating a class
         case `Activate a class`:
