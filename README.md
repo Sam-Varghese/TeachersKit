@@ -1,4 +1,4 @@
-# Teachers Kit
+# Teachers kit
 
 ---
 
