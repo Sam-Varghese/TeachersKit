@@ -174,6 +174,9 @@ async function TakeOnlineAttendance() {
         }
         // Now add the list of presentees to the database
         StoreAttendance(namesList, classSelected, `Online`);
+        namesList.forEach((name) => {
+            console.log(chalk.green(`Marked ${name} present.`));
+        })
     }
 }
 module.exports = TakeOnlineAttendance;
