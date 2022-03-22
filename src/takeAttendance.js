@@ -13,7 +13,7 @@ async function TakeAttendance() {
     ]);
     switch (attendanceType[0]) {
         case `Online only`:
-            TakeOnlineAttendance();
+            await TakeOnlineAttendance();
             break;
         case `Online + Offline`:
             await TakeOnlineAttendance();
